@@ -9,6 +9,8 @@ import ScrollToTop from 'src/ScrollToTop';
 import Sparkle from 'src/components/Sparkle';
 import Button from '@material-ui/core/Button';
 import CheckIcon from "@material-ui/icons/Check";
+import { Phone as PhoneIcon } from 'react-feather';
+import { Mail as MailIcon } from 'react-feather';
 
 const useStyles = makeStyles((theme) => ({
   listItem: {
@@ -60,11 +62,14 @@ export default function Review({values, products, onBuy, onStepBack, ...props}) 
           </Typography>
         </ListItem>
       </List>
-      <Typography variant="h5" gutterBottom>
-        Fecha límite para retirar  el/los productos por el comercio:
+      <Typography variant="h5" color="#d32f2f" gutterBottom>
+        Pongase en contacto con el donador, recuerde que tiene una fecha límite para retirar el/los productos.
+      </Typography>
+      <Typography variant="h5" gutterBottom> 
+      Fecha límite para retirar  el/los productos:
       </Typography>
       <Typography gutterBottom>
-            {`${values.address.address1}, ${values.address.city}, ${values.address.province}, ${values.address.phone}`}
+      {' 12/11/2021'}
           </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
@@ -72,10 +77,12 @@ export default function Review({values, products, onBuy, onStepBack, ...props}) 
             Datos de contacto:
           </Typography>
           <Typography gutterBottom>
-            {`${values.address.address1}, ${values.address.city}, ${values.address.province}, ${values.address.phone}`}
+          <PhoneIcon/>
+          {' 4752-4234'}
           </Typography>
           <Typography gutterBottom>
-            {`${values.address.address1}, ${values.address.city}, ${values.address.province}, ${values.address.phone}`}
+          <MailIcon/>
+          {' eltio@gmail.com'}
           </Typography>
         </Grid>
       </Grid>
