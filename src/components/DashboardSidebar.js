@@ -135,7 +135,7 @@ const DashboardSidebar = ({ onMobileClose, openMobile, onLogOut, user, productCo
           color="textPrimary"
           variant="h5"
         >
-          {user.firstName || 'Visitante'}
+          {user.comertialName || 'Visitante'}
         </Typography>
       </Box>
       <Divider />
