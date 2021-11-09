@@ -74,7 +74,7 @@ export default function Review({values, products, onBuy, onStepBack, ...props}) 
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
-            Datos de contacto:
+            Datos de contacto del donador:
           </Typography>
           <Typography gutterBottom>
           <PhoneIcon/>
