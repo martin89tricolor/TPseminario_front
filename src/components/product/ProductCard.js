@@ -74,7 +74,7 @@ const ProductCard = ({ product, onAgregarClick, ...rest }) => {
           variant="h4"
         >
           Fecha de vencimiento: 
-          {product.fecha}
+           {' '}{product.fecha}
         </Typography>
         {product.stock > 0 ?
         <Typography
