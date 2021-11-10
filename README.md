@@ -1,21 +1,15 @@
-# UADE - Aplicaciones Interactivas - TP
+# UADE - Seminario1 - TP
 
-Trabajo práctico de tienda de artículos de PC.
+Trabajo práctico - DONAPP
 
-Estudiantes
+Integrantes:
 
-* **QUINTEROS PARADA**, Juan Ignacio
-* **FIORDILINO**, Martín Alberto
-
-Usuario cliente de prueba:
-
-* Usuario: inewton@uade.edu.ar
-* Password: asd123
-
-Usuario admin de prueba:
-
-* Usuario: mfaraday@uade.edu.ar
-* Password: asd123
+* Ancan Lomaquis, Nahuel
+* Daroca, Matías
+* Fiordilino, Martin Alberto
+* Petit Mera, Camila
+* Rosa Fernández, Manuel Alexis
+* Taborda, Franco Ariel
 
 # Cómo correrlo
 
