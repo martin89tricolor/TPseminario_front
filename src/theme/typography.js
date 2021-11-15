@@ -11,7 +11,7 @@ const typography = {
   },
   h3: {
     fontWeight: 500,
-    fontSize: 24,
+    fontSize: 25,
     letterSpacing: '-0.06px'
   },
   h4: {
