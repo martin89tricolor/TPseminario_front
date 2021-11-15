@@ -21,6 +21,7 @@ import {
   List as ListIcon,
 } from 'react-feather';
 import {
+  Avatar,
   Menu,
   MenuItem
 } from '@material-ui/core';
@@ -107,10 +108,17 @@ const DashboardNavbar = ({ products, user, onMobileNavOpen, onLogOut, ...rest })
       elevation={0}
       {...rest}
     >
-      <Toolbar>
+     <Toolbar>
         <RouterLink to="/">
-       
-       
+          <Avatar
+            src={'/static/images/Logo.png'}
+            alt="Product"
+            variant="square"
+            sx={{
+              height: 80,
+              width: 250,
+            }}
+          />
         </RouterLink>
         <Box sx={{ flexGrow: 1 }} />
         <Hidden lgDown>
