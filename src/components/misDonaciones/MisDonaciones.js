@@ -44,28 +44,28 @@ function OrdersRow (props){
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-      <TableCell >
+      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2} >
         {order._id}
       </TableCell >
-      <TableCell >
+      <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         {order.comertialName}
       </TableCell >
-      <TableCell >
+      <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         {order.phone}
       </TableCell >
-      <TableCell >
-        {order.email}
+      <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
+        {''}
       </TableCell >
-      <TableCell>
+      <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2} align="center">
         {order.cantidad}
       </TableCell>
-      <TableCell>
+      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         {order.fechadonacion}
       </TableCell>
-      <TableCell>
+      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         {order.fechaentrega}
       </TableCell>
-      <TableCell>
+      <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         <Chip label={order.estado} color={order.estado === 'Entregada' ? 'primary' : 'default'} />
       </TableCell>
     </TableRow>
@@ -74,13 +74,13 @@ function OrdersRow (props){
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 0 }}>
               <Typography variant="h6" gutterBottom component="div">
-                Detalle de la donación
+                Detalle de la Donación:
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="left">Producto</TableCell>
-                    <TableCell align="left">Cantidad</TableCell>
+                    <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}align="left">Producto</TableCell>
+                    <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}align="center">Cantidad</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -89,7 +89,7 @@ function OrdersRow (props){
                       <TableCell align="left" component="th" scope="row">
                         {producto.product.nombre}
                       </TableCell>
-                      <TableCell align="left">{producto.quantity}</TableCell>
+                      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2} align="center">{producto.quantity}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -182,28 +182,30 @@ const AdminOrders= ({ ...rest }) => {
                 <TableRow>
                   <TableCell> 
                   </TableCell>
-                  <TableCell>
+                  <TableCell >
                     ID de Donación
                   </TableCell>
-                  <TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     Donador
                   </TableCell>
-                  <TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     Teléfono Donador
                   </TableCell>
-                  <TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     E-mail Donador
                   </TableCell>
-                  <TableCell>
-                    Cantidad de Productos
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                   </TableCell>
-                  <TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
+                   Total de Productos
+                  </TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     Fecha de Reserva
                   </TableCell>
-                  <TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     Fecha límite de retiro
                   </TableCell>
-                  <TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     Estado
                   </TableCell>
                 </TableRow>
