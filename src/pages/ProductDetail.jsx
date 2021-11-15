@@ -167,37 +167,37 @@ const ProductDetail = (props) => {
           </Grid>
           <Grid sx={{marginTop: 3}} container spacing={3}>
             <Grid item xs={6} md={3}>
-              <Typography color="textPrimary" variant="h4">Marca</Typography>
+              <Typography color="textPrimary" variant="h3">Marca</Typography>
               <Typography
-                color="textPrimary"
-                variant="body1"
+                color="textSecondary"
+                variant="h4"
               >
                 {product.marca}
               </Typography>
             </Grid>
             <Grid item xs={6} md={3}>
-              <Typography color="textPrimary" variant="h4">Fecha de vencimiento</Typography>
+              <Typography color="textPrimary" variant="h3">Fecha de vencimiento</Typography>
               <Typography
-                color="textPrimary"
-                variant="body1"
+                color="textSecondary"
+                variant="h4"
               >
                 {product.fecha}
               </Typography>
             </Grid>
             <Grid item xs={6} md={3}>
-              <Typography color="textPrimary" variant="h4">Categoria</Typography>
+              <Typography color="textPrimary" variant="h3">Categoria</Typography>
               <Typography
-                color="textPrimary"
-                variant="body1"
+                color="textSecondary"
+                variant="h4"
               >
                 {product.categoria}
               </Typography>
             </Grid>
             <Grid item xs={6} md={3}>
-              <Typography color="textPrimary" variant="h4">Volumen</Typography>
+              <Typography color="textPrimary" variant="h3">Volumen</Typography>
               <Typography
-                color="textPrimary"
-                variant="body1"
+                color="textSecondary"
+                variant="h4"
               >
                 {product.volumen}
               </Typography>
@@ -205,27 +205,28 @@ const ProductDetail = (props) => {
           </Grid>
           <Grid sx={{marginTop: 3}} container spacing={3}>
           <Grid item xs={6} md={3}>
-              <Typography color="textPrimary" variant="h4">Zona</Typography>
+              <Typography color="textPrimary" variant="h3">Zona</Typography>
               <Typography
-                color="textPrimary"
-                variant="body1"
+                color="textSecondary"
+                variant="h4"
               >
                 {product.zona}
               </Typography>
             </Grid>
-          <Grid item xs={6} md={3}>
-            <Typography color="textPrimary" variant="h4">Descripción</Typography>
+          <Grid item xs={6} md={6}>
+            <Typography color="textPrimary" variant="h3">Descripción</Typography>
             {product.descripcion === '' ?
               <Typography
                 color="textSecondary"
-                variant="body1"
+                variant="h4"
               >
                 <em>No se proporcionó una descripción</em>
               </Typography>
               :
               <Typography
-                color="textPrimary"
-                variant="body1"
+                color="textSecondary"
+                variant="h4"
+            
               >
                 {product.descripcion}
               </Typography>
