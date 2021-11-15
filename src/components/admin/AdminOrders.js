@@ -214,7 +214,7 @@ const AdminOrders= ({ ...rest }) => {
         <Button variant="contained" color="primary" onClick={handleEnviados} sx={{ mx: 1 }}
         component={RouterLink} to={'/admin/remitos'}
         >
-          Ver remitos
+          Solictar remitos
         </Button>
         <Button variant="contained" color="primary" onClick={handleEnviados} sx={{ mx: 1 }}>
           Marcar como entregadas
