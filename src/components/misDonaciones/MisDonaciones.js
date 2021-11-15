@@ -35,7 +35,7 @@ function OrdersRow (props){
        <title>DONAPP | Mis Donaciones</title>
     </Helmet>
     <TableRow hover>
-      <TableCell>
+      <TableCell >
           <IconButton
             aria-label="expand row"
             size="small"
@@ -44,9 +44,18 @@ function OrdersRow (props){
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-      <TableCell>
+      <TableCell >
         {order._id}
-      </TableCell>
+      </TableCell >
+      <TableCell >
+        {order.comertialName}
+      </TableCell >
+      <TableCell >
+        {order.phone}
+      </TableCell >
+      <TableCell >
+        {order.email}
+      </TableCell >
       <TableCell>
         {order.cantidad}
       </TableCell>
@@ -59,14 +68,11 @@ function OrdersRow (props){
       <TableCell>
         <Chip label={order.estado} color={order.estado === 'Entregada' ? 'primary' : 'default'} />
       </TableCell>
-      <TableCell>
-        ${order.total}
-      </TableCell>
     </TableRow>
     <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
+            <Box sx={{ margin: 0 }}>
               <Typography variant="h6" gutterBottom component="div">
                 Detalle de la donación
               </Typography>
@@ -74,19 +80,15 @@ function OrdersRow (props){
                 <TableHead>
                   <TableRow>
                     <TableCell align="left">Producto</TableCell>
-                    <TableCell align="left">Marca</TableCell>
-                    <TableCell align="left">Modelo</TableCell>
                     <TableCell align="left">Cantidad</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {order.buyOrder.products.map((producto) => (
                     <TableRow key={producto._id}>
-                      <TableCell component="th" scope="row">
+                      <TableCell align="left" component="th" scope="row">
                         {producto.product.nombre}
                       </TableCell>
-                      <TableCell>{producto.product.marca}</TableCell>
-                      <TableCell align="left">{producto.product.modelo}</TableCell>
                       <TableCell align="left">{producto.quantity}</TableCell>
                     </TableRow>
                   ))}
@@ -176,27 +178,33 @@ const AdminOrders= ({ ...rest }) => {
         <PerfectScrollbar>
           <Box sx={{ minWidth: 1050 }}>
             <Table>
-              <TableHead>
+              <TableHead>  
                 <TableRow>
-                  <TableCell>
+                  <TableCell> 
                   </TableCell>
                   <TableCell>
-                    ID de la Compra
+                    ID de Donación
+                  </TableCell>
+                  <TableCell>
+                    Donador
+                  </TableCell>
+                  <TableCell>
+                    Teléfono Donador
+                  </TableCell>
+                  <TableCell>
+                    E-mail Donador
                   </TableCell>
                   <TableCell>
                     Cantidad de Productos
                   </TableCell>
                   <TableCell>
-                    Fecha de Compra
+                    Fecha de Reserva
                   </TableCell>
                   <TableCell>
-                    Fecha de Entrega
+                    Fecha límite de retiro
                   </TableCell>
                   <TableCell>
-                    Estado del Envío
-                  </TableCell>
-                  <TableCell>
-                    Pagado
+                    Estado
                   </TableCell>
                 </TableRow>
               </TableHead>
