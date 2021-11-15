@@ -18,8 +18,8 @@ const theme = createMuiTheme({
       main: amber[500],
     },
     text: {
-      primary: '#172b4d',
-      secondary: '#6b778c'
+      primary: '#000000',
+      secondary: '#444444'
     }
   },
   shadows,
