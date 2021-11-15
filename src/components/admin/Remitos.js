@@ -1,14 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Download as DownloadIcon } from 'react-feather';
 import {
   Box,
   Card,
   CardContent,
-  CardHeader,
   Container,
   Divider,
-  Grid,
-  Button,
   Typography,
 } from '@material-ui/core';
 
@@ -39,50 +35,15 @@ const Remitos = ({...props}) => {
           autoComplete="off"
         >
           <Card>
-            <CardHeader
-              subheader="Aquí puede descargar los remitos de sus donaciones entregadas"
-              title="Remitos"
-            />
-            <Divider />
             <CardContent>
-              <Grid
-                container
-                spacing={1}
-              >
-            <Typography variant="h6" gutterBottom className={classes.title}>
-            Remito 1: 
+   
+            <Typography variant="h4" gutterBottom className={classes.title}>
+            El remito solicitado será enviado a su casilla de correo electrónico dentro de las próximas 24 horas.
           </Typography>
-          <Grid
-                  item
-                  md={1}
-                  xs={12}
-                >
-           <a href="/pdf" target="_blank"> <button>Ir a PDF</button></a>
-        </Grid>
-        <Typography variant="h6" gutterBottom className={classes.title}>
-            Remito 2: 
+          
+          <Typography variant="h4" gutterBottom className={classes.title}>
+            Gracias por realizar su donación.
           </Typography>
-          <Grid
-                  item
-                  md={1}
-                  xs={12}
-                >
-          <Button
-          color="primary"
-          fullWidth
-          variant="text"
-          component="label"
-          link ="https://docs.google.com/document/d/1F2uYX-BT-3SYDoKlEtDtaAWC9M7v-dx6/edit?usp=sharing&ouid=117602395964269392321&rtpof=true&sd=true"
-        >
-        
-          <DownloadIcon/>
-          <input
-            type="file"
-            hidden
-          />
-        </Button>
-        </Grid>
-        </Grid>
           
             </CardContent>
             <Divider />
