@@ -57,7 +57,7 @@ function OrdersRow (props){
         {order._id}
       </TableCell>
       <TableCell>
-        {`${order.buyOrder.user.firstName} ${order.buyOrder.user.lastName}`}
+        {`${order.buyOrder.user.comertialName}`}
       </TableCell>
       <TableCell>
         {order.buyOrder.user.email}
@@ -257,7 +257,7 @@ const AdminOrders= ({ ...rest }) => {
                     Fecha de Donación
                   </TableCell>
                   <TableCell>
-                    Fecha tope para retirar
+                    Fecha límite de retiro
                   </TableCell>
                   <TableCell>
                     Estado
