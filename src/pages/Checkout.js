@@ -4,9 +4,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Alert from '@material-ui/core/Alert';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
 import Typography from '@material-ui/core/Typography';
 import Review from 'src/components/checkout/Review';
 import {useEffect} from 'react';
@@ -56,16 +53,12 @@ export default function Checkout({onFinishedBuy, user, products, ...props}) {
   const classes = useStyles();
   const [values, setValues] = useState({
     user: {
-      name: user.name,
+      comertialName: user.comertialName,
       email: user.email,
     },
     address: {
       ...user.address,
       useAddress: true,
-    },
-    payment: {
-      ...user.payment,
-      saveCard: true,
     },
   });
   const [activeStep, setActiveStep] = React.useState(0);
@@ -91,10 +84,6 @@ export default function Checkout({onFinishedBuy, user, products, ...props}) {
     });
   }, [user._id]);
 
-  const handleNext = () => {
-    setActiveStep(activeStep + 1);
-  };
-
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
@@ -106,12 +95,6 @@ export default function Checkout({onFinishedBuy, user, products, ...props}) {
     const finishedBuyOrder = {
       ...values,
       products,
-    }
-    if(values.address.saveAddress) {
-      finishedBuyOrder.payment.address1 = finishedBuyOrder.address.address1;
-      finishedBuyOrder.payment.state = finishedBuyOrder.address.state;
-      finishedBuyOrder.payment.city = finishedBuyOrder.address.city;
-      finishedBuyOrder.payment.phone = finishedBuyOrder.address.phone;
     }
     axios.post('/orders', finishedBuyOrder)
     .then(() => {
