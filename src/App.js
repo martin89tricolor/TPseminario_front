@@ -100,7 +100,7 @@ const App = () => {
   function handleFinishedBuy(buyOrder) {
     setProducts([]);
     navigate("/app/home");
-    alert("Compra realizada 😊");
+    alert("Reserva realizada 😊");
   }
 
   return (
