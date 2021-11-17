@@ -2,10 +2,13 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
 import {
   Box,
   Button,
   Container,
+  Grid,
   Link,
   TextField,
   Typography
@@ -78,6 +81,29 @@ const Login = (props) => {
                     INGRESAR
                   </Typography>
                   </Box>
+           <Container maxWidth="lg" >
+                <Grid
+                  item
+                  lg={12}
+                  md={12}
+                  xl={4}
+                  xs={12}
+                >
+                   <ImageList lg={{ width: "90%", height: "100%" }} algin="center">
+                    {itemData.map((item) => (
+                <ImageListItem key={item.img} >
+                    <img
+                      src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                      srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+     
+    ))}
+  </ImageList>
+  </Grid>
+  </Container>
                 <TextField
                   error={Boolean(touched.email && errors.email) || failedLogin}
                   fullWidth
@@ -146,5 +172,14 @@ const Login = (props) => {
     </>
   );
 };
+const itemData = [
+  {
+    img: 'https://res.cloudinary.com/dntepcqvn/image/upload/v1637192802/loguito_wjwvaj.png',
+    title: 'Logo',
+  },
+  
+
+];
+
 
 export default Login;
