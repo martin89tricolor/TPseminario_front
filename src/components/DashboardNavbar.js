@@ -52,14 +52,14 @@ const items = [
   {
     href: '/admin/ABM',
     icon: EditIcon,
-    title: 'Listado de Productos',
+    title: 'Mis Publicaciones',
     requiresAdmin: true,
     requiresLogin: true,
   },
   {
     href: '/admin/orders',
     icon: ListIcon,
-    title: 'Donaciones',
+    title: 'Mis Donaciones',
     requiresAdmin: true,
     requiresLogin: true,
   },
