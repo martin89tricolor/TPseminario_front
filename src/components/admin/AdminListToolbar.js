@@ -37,14 +37,14 @@ const AdminListToolbar = ({buscadorText, onBuscadorChange, onBuscar, onDeleteCli
         }}
       >
         <Button color="secondary" variant="contained" onClick={handleDeleteClick} sx={{ mx: 1 }}>
-          Eliminar
+          Eliminar Publicación
         </Button>
         <Button
           color="primary"
           variant="contained"
           component={RouterLink} to={'/admin/add-product'}
         >
-          Agregar Producto
+          Crear Publicación
         </Button>
       </Box>
       <Box sx={{ mt: 3 }}>
