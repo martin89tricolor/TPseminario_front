@@ -60,7 +60,7 @@ function OrdersRow (props){
         {`${order.buyOrder.user.comertialName}`}
       </TableCell>
       <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-        {order.buyOrder.user.email}
+        {order.buyOrder.user.cuit}
       </TableCell>
       <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}> 
         {order.buyOrder.user.email}
