@@ -36,7 +36,7 @@ const AdminListToolbar = ({buscadorText, onBuscadorChange, onBuscar, onDeleteCli
           justifyContent: 'flex-end'
         }}
       >
-        <Button color="secondary" variant="contained" onClick={handleDeleteClick} sx={{ mx: 1 }}>
+        <Button color="tertiary" variant="contained" onClick={handleDeleteClick} sx={{ mx: 1 }}>
           Eliminar Publicación
         </Button>
         <Button
