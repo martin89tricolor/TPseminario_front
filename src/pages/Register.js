@@ -8,6 +8,7 @@ import {
   Checkbox,
   Container,
   FormHelperText,
+  Grid,
   Link,
   TextField,
   Typography
@@ -47,20 +48,24 @@ const Register = (props) => {
             initialValues={{
               email: '',
               comertialName: '',
+              cuit:'',
               address1: '',
               city: '',
               province: '',
               phone: '',
               password: '',
+              cp:'',
               policy: false
             }}
             validationSchema={
               Yup.object().shape({
                 comertialName: Yup.string().max(255).required('Ingrese nombre'),
                 address1: Yup.string().max(255).required('Ingrese dirección'),
+                cuit: Yup.string().max(255).required('Ingrese CUIT'),
                 city: Yup.string().max(255).required('Ingrese localidad'),
                 province: Yup.string().max(255).required('Ingrese provincia'),
                 phone: Yup.string().max(255).required('Ingrese telefono'),
+                cp: Yup.string().max(255).required('Ingrese Código Postal'),
                 email: Yup.string().email('Ingresar un e-mail válido').max(255).required('Ingrese e-mail'),
                 password: Yup.string().max(255).required('Ingrese contraseña'),
                 policy: Yup.boolean().oneOf([true], 'Aceptar Terminos')
@@ -80,7 +85,7 @@ const Register = (props) => {
               values
             }) => (
               <form onSubmit={handleSubmit}>
-                <Box sx={{ mb: 3 }}>
+                <Box sx={{ mb: 1}}>
                   <Typography
                     color="textPrimary"
                     variant="h2"
@@ -95,6 +100,15 @@ const Register = (props) => {
                     Ingrese los datos para crear la cuenta
                   </Typography>
                 </Box>
+          <Grid
+            container
+            spacing={3}
+          >
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
                 <TextField
                   error={Boolean(touched.comertialName && errors.comertialName)}
                   fullWidth
@@ -107,6 +121,30 @@ const Register = (props) => {
                   value={values.comertialName}
                   variant="outlined"
                 />
+              </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+                 <TextField
+                  error={Boolean(touched.cuit && errors.cuit)}
+                  fullWidth
+                  helperText={touched.cuit && errors.cuit}
+                  label="CUIT"
+                  margin="normal"
+                  name="cuit"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.cuit}
+                  variant="outlined"
+                />
+              </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
                 <TextField
                   error={Boolean(touched.address1 && errors.address1)}
                   fullWidth
@@ -119,6 +157,12 @@ const Register = (props) => {
                   value={values.address1}
                   variant="outlined"
                 />
+              </Grid>
+             <Grid
+              item
+              md={6}
+              xs={12}
+            >
                  <TextField
                   error={Boolean(touched.city && errors.city)}
                   fullWidth
@@ -131,6 +175,12 @@ const Register = (props) => {
                   value={values.city}
                   variant="outlined"
                 />
+                </Grid>
+             <Grid
+              item
+              md={6}
+              xs={12}
+            >
                   <TextField
                   error={Boolean(touched.province && errors.province)}
                   fullWidth
@@ -143,6 +193,30 @@ const Register = (props) => {
                   value={values.province}
                   variant="outlined"
                 />
+                </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+                  <TextField
+                  error={Boolean(touched.cp && errors.cp)}
+                  fullWidth
+                  helperText={touched.cp && errors.cp}
+                  label="Código Postal"
+                  margin="normal"
+                  name="cp"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.cp}
+                  variant="outlined"
+                />
+                </Grid>
+             <Grid
+              item
+              md={6}
+              xs={12}
+            >
                 <TextField
                   error={Boolean(touched.phone && errors.phone)}
                   fullWidth
@@ -155,6 +229,18 @@ const Register = (props) => {
                   value={values.phone}
                   variant="outlined"
                 />
+             </Grid>
+             </Grid>
+                
+           <Grid
+            container
+            spacing={3}
+          >
+             <Grid
+              item
+              md={6}
+              xs={12}
+            >
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
@@ -168,6 +254,12 @@ const Register = (props) => {
                   value={values.email}
                   variant="outlined"
                 />
+                </Grid>
+             <Grid
+              item
+              md={6}
+              xs={12}
+            >
                 <TextField
                   error={Boolean(touched.password && errors.password)}
                   fullWidth
@@ -181,6 +273,9 @@ const Register = (props) => {
                   value={values.password}
                   variant="outlined"
                 />
+                </Grid>
+                </Grid>
+      
                 <Box
                   sx={{
                     alignItems: 'center',
