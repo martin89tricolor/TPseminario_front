@@ -18,7 +18,6 @@ import Orders from 'src/pages/Orders';
 import Checkout from 'src/pages/Checkout';
 import AdminUsers from 'src/components/admin/AdminUsers';
 import MisDonaciones from 'src/components/misDonaciones/MisDonaciones';
-import Pdf from 'src/pages/Pdf';
 
 const routes = (props) => [
   {
@@ -69,7 +68,6 @@ const routes = (props) => [
         { path: 'orders', element: <Orders /> },
         { path: 'users', element: <AdminUsers /> },
         { path: 'remitos', element: <Remitos /> },
-        { path: 'pdf', element: <Pdf /> },    
       ]
     },
   {
