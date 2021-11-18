@@ -66,7 +66,7 @@ function OrdersRow (props){
         {order.fechaentrega}
       </TableCell>
       <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-        <Chip label={order.estado} color={order.estado === 'OK' ? 'primary' : 'default'} />
+        <Chip label={order.estado} color={order.estado === 'OK' ? 'secondary' : 'default'} />
       </TableCell>
     </TableRow>
     <TableRow>
