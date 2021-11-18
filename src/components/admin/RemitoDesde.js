@@ -14,7 +14,26 @@ export default function RemitoDesde() {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div>
-        <Typography  variant="h4" sx={{ mt: 2, mb: 1 }}>Seleccione el intervalo de fechas de los remitos a solicitar: </Typography>
+        <Typography  variant="h4" sx={{ mt: 2, mb: 1 }}> Su remito será enviado a su casilla de correo electrónico dentro de las próximas 24 horas.</Typography>
+        <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                p: 1
+              }}
+            >
+            </Box>
+        <Typography variant="h4" >
+          En el remito se incluiran todos los productos entregados durante el intervalo de fechas que seleccione a continuacion:
+          </Typography>
+          <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                p: 1
+              }}
+            >
+            </Box>
         <DateRangePicker
           startText="Fecha Inicial"
           endText="Fecha Final"
