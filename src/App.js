@@ -11,6 +11,7 @@ import axios from 'axios';
 const guestUser = {
   comertialName: 'Visitante',
   email: '',
+  cuit:'',
   avatar: '',
   isAdmin: false,
   isGuest: true,
@@ -19,6 +20,7 @@ const guestUser = {
     province: '',
     city: '',
     phone: '',
+    cp:'',
   }
 }
 
