@@ -75,7 +75,7 @@ function OrdersRow (props){
         {order.fechaentrega}
       </TableCell>
       <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-        <Chip label={order.estado} color={order.estado === 'Entregada' ? 'primary' : 'default'} />
+        <Chip label={order.estado} color={order.estado === 'OK' ? 'secondary' : 'default'} />
       </TableCell>
     </TableRow>
     <TableRow>
@@ -177,7 +177,7 @@ const AdminOrders= ({ ...rest }) => {
   }
 
   function handleEnviados() {
-    axios.post('/orders/update-status', {ids: selectedOrders, estado: 'Entregada'})
+    axios.post('/orders/update-status', {ids: selectedOrders, estado: 'OK'})
     .then((res) => {
       refreshPage(page);
       setSelectedOrders([]);
@@ -214,7 +214,7 @@ const AdminOrders= ({ ...rest }) => {
         <Button variant="contained" color="primary" onClick={handleEnviados} sx={{ mx: 1 }}
         component={RouterLink} to={'/admin/remitos'}
         >
-          Solictar remitos
+          Solicitar remitos
         </Button>
         <Button variant="contained" color="primary" onClick={handleEnviados} sx={{ mx: 1 }}>
           Marcar como entregadas
@@ -264,7 +264,7 @@ const AdminOrders= ({ ...rest }) => {
                     Fecha límite de retiro
                   </TableCell>
                   <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-                    Estado
+                    Estado de Entrega
                   </TableCell>
                 </TableRow>
               </TableHead>
