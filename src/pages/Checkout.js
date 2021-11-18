@@ -55,6 +55,7 @@ export default function Checkout({onFinishedBuy, user, products, ...props}) {
     user: {
       comertialName: user.comertialName,
       email: user.email,
+      cuit: user.cuit,
     },
     address: {
       ...user.address,
@@ -74,6 +75,7 @@ export default function Checkout({onFinishedBuy, user, products, ...props}) {
       setValues({
         user: {
           comertialName: res.data.data.comertialName,
+          cuit: res.data.data.cuit,
           email: res.data.data.email,
         },
         address: {
