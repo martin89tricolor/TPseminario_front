@@ -2,7 +2,9 @@ import { createMuiTheme, colors } from '@material-ui/core';
 import shadows from './shadows';
 import typography from './typography';
 import blue from '@material-ui/core/colors/blue';
-import amber from '@material-ui/core/colors/amber';
+import green from '@material-ui/core/colors/green';
+import red from '@material-ui/core/colors/red';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -15,7 +17,10 @@ const theme = createMuiTheme({
       main: blue[500],
     },
     secondary: {
-      main: amber[500],
+      main: green[500],
+    },
+    tertiary: {
+      main: red[500],
     },
     text: {
       primary: '#000000',
