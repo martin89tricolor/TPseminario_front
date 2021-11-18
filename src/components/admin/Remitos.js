@@ -48,14 +48,21 @@ const Remitos = ({...props}) => {
               }}
             >
             </Box>
-            <Typography variant="h4" gutterBottom className={classes.title}>
-           Serán enviados a su casilla de correo electrónico los remitos del periodo seleccionado dentro de las próximas 24 horas.
-          </Typography>
           <Typography variant="h4" gutterBottom className={classes.title}>
             Gracias por realizar su donación.
           </Typography>
-          <Button variant="contained" color="primary"  sx={{ mx: 1 }}
-        component={RouterLink} to={'/admin/orders'}
+          <Box
+              sx={{
+                display: 'center',
+                justifyContent: 'center',
+                p: 1
+              }}
+            >
+            </Box>
+          <Button variant="contained" color="primary" 
+           sx={{ mx: 65 }}
+           type="submit"
+           component={RouterLink} to={'/admin/orders'}
         >
           Enviar Pedido
         </Button>
