@@ -7,6 +7,7 @@ import {
 import LatestProducts from 'src/components/home/LatestProducts';
 import LatestEnlatados from 'src/components/home/LatestEnlatados';
 import LatestEmbotellados from 'src/components/home/LatestEmbotellados';
+import Banner from 'src/components/home/Banner'  
 
 
 const Home = ({productsdb, ...props}) => (
@@ -23,16 +24,33 @@ const Home = ({productsdb, ...props}) => (
     >
       <main>
         <div>
-      <Container maxWidth="lg" >
+      <Container maxWidth="xl" >
         <Grid
           container
-          spacing={2}
+          spacing={1}
         >
+         <Grid
+            item
+            lg={8}
+            md={12}
+            xl={2}
+            xs={12}
+          >
+       <Box
+          sx={{
+            backgroundColor: 'background.default',
+            minHeight: '100%',
+            py: 20
+          }}
+          >
+            <Banner/>
+        </Box>
+          </Grid>
           <Grid
             item
             lg={8}
             md={12}
-            xl={4}
+            xl={2.5}
             xs={12}
           >
        <Box
@@ -49,7 +67,7 @@ const Home = ({productsdb, ...props}) => (
             item
             lg={8}
             md={12}
-            xl={4}
+            xl={2.5}
             xs={12}
           >
         <Box
@@ -66,7 +84,7 @@ const Home = ({productsdb, ...props}) => (
             item
             lg={8}
             md={12}
-            xl={4}
+            xl={2.5}
             xs={12}
           >
          <Box
@@ -77,6 +95,22 @@ const Home = ({productsdb, ...props}) => (
           }}
           >
             <LatestEmbotellados products={productsdb} />
+        </Box>
+          </Grid>
+          <Grid
+            item
+            lg={12}
+            md={12}
+            xl={2.5}
+            xs={12}
+          >
+       <Box
+          sx={{
+            backgroundColor: 'background.default',
+            py: 20
+          }}
+          >
+            <Banner/>
         </Box>
           </Grid>
         </Grid>
