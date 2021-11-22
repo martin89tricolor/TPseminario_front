@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import CheckIcon from "@material-ui/icons/Check";
 import { Phone as PhoneIcon } from 'react-feather';
 import { Mail as MailIcon } from 'react-feather';
+var moment = require('moment');
 
 const useStyles = makeStyles((theme) => ({
   listItem: {
@@ -69,7 +70,7 @@ export default function Review({values, products, onBuy, onStepBack, ...props}) 
       Fecha límite para retirar  el/los productos:
       </Typography>
       <Typography gutterBottom>
-      {' 12/11/2021'}
+      { moment().add(2, "days").format("DD/MM/YYYY")}
           </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
