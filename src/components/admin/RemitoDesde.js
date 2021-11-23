@@ -24,7 +24,7 @@ export default function RemitoDesde() {
             >
             </Box>
         <Typography variant="h4" >
-          En el remito se incluiran todos los productos entregados durante el intervalo de fechas que seleccione a continuacion:
+         En el remito se incluirán todos los productos entregados durante el intervalo de fechas que seleccione a continuación:
           </Typography>
           <Box
               sx={{
