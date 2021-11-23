@@ -102,6 +102,10 @@ const Register = (props) => {
                 </Box>
           <Grid
             container
+            
+          >
+            <Grid
+            container
             spacing={3}
           >
             <Grid
@@ -140,6 +144,11 @@ const Register = (props) => {
                   variant="outlined"
                 />
               </Grid>
+              </Grid>
+          <Grid
+            container
+            spacing={3}
+          >
             <Grid
               item
               md={6}
@@ -176,6 +185,11 @@ const Register = (props) => {
                   variant="outlined"
                 />
                 </Grid>
+                </Grid>
+           <Grid
+            container
+            spacing={3}
+          >
              <Grid
               item
               md={6}
@@ -212,6 +226,11 @@ const Register = (props) => {
                   variant="outlined"
                 />
                 </Grid>
+                </Grid>
+          <Grid
+            container
+            spacing={3}
+          >
              <Grid
               item
               md={6}
@@ -229,6 +248,7 @@ const Register = (props) => {
                   value={values.phone}
                   variant="outlined"
                 />
+             </Grid>
              </Grid>
              </Grid>
                 
