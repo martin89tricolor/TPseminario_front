@@ -40,7 +40,7 @@ const itemData = [
     title: 'Comedor',
   },
   {
-    img:  'https://res.cloudinary.com/dntepcqvn/image/upload/v1636927067/wallpaperbetter.com_1280x1024_2_cfj0bx.png',
+    img:  'https://res.cloudinary.com/dntepcqvn/image/upload/v1637711531/12_e9pugs.png',
     title: 'chicos',
   },
  
