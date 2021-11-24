@@ -16,7 +16,7 @@ export default function Banner() {
     <ImageList
       sx={{
         width: 300,
-        height: 600,
+        height: 800,
         py: -1
       }}
     >
@@ -40,8 +40,8 @@ export default function Banner() {
 
 const itemData = [
   {
-    img: 'https://res.cloudinary.com/dntepcqvn/image/upload/v1637210394/1_qpotdk.png',
-    title: 'Breakfast',
+    img: 'https://res.cloudinary.com/dntepcqvn/image/upload/v1637712330/ministerio_uhgcgk.png',
+    title: 'Ministerio',
     featured: true,
   },
 ];
