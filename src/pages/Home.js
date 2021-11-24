@@ -8,6 +8,7 @@ import LatestProducts from 'src/components/home/LatestProducts';
 import LatestEnlatados from 'src/components/home/LatestEnlatados';
 import LatestEmbotellados from 'src/components/home/LatestEmbotellados';
 import Banner from 'src/components/home/Banner'  
+import Banner2 from 'src/components/home/Banner2'  
 
 
 const Home = ({productsdb, ...props}) => (
@@ -40,7 +41,7 @@ const Home = ({productsdb, ...props}) => (
           sx={{
             backgroundColor: 'background.default',
             minHeight: '100%',
-            py: 20
+            py: 3
           }}
           >
             <Banner/>
@@ -107,10 +108,10 @@ const Home = ({productsdb, ...props}) => (
        <Box
           sx={{
             backgroundColor: 'background.default',
-            py: 20
+            py: 3
           }}
           >
-            <Banner/>
+            <Banner2/>
         </Box>
           </Grid>
         </Grid>
