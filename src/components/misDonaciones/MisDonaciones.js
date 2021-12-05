@@ -44,14 +44,17 @@ function OrdersRow (props){
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2} >
+        <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         {order._id}
       </TableCell >
       <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-        {order.comertialName}
+        {'El Tío'}
       </TableCell >
       <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-        {order.phone}
+        {'4752-4234'}
+      </TableCell >
+      <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
+        {'eltio@gmail.com'}
       </TableCell >
       <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
         {''}
@@ -186,13 +189,15 @@ const AdminOrders= ({ ...rest }) => {
                     ID de Donación
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
+                  </TableCell>
+                  <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     Donador
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-                    Teléfono Donador
+                  Teléfono de Donador
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-                    E-mail Donador
+                  E-mail de Donador
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                   </TableCell>
