@@ -75,6 +75,13 @@ const items = [
     requiresAdmin: true,
     requiresLogin: true,
   },
+  {
+    href: '/admin/users',
+    icon: ListIcon,
+    title: 'Usuarios',
+    requiresAdmin: true,
+    requiresLogin: true,
+  }
 ];
 
 function visibleFor(link, user) {
