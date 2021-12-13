@@ -63,6 +63,13 @@ const items = [
     requiresAdmin: true,
     requiresLogin: true,
   },
+  {
+    href: '/admin/users',
+    icon: ListIcon,
+    title: 'Usuarios',
+    requiresAdmin: true,
+    requiresLogin: true,
+  }
 ];
 
 function visibleFor(link, user) {
@@ -185,7 +192,7 @@ const DashboardNavbar = ({ products, user, onMobileNavOpen, onLogOut, ...rest })
           <IconButton color="inherit" component={RouterLink} to="/app/cart-detail">
             <Badge
               badgeContent={products.map(p => p.quantity).reduce((a,b) => (a+b), 0)}
-              color="secondary"
+              color="tertiary"
             >
               <ShoppingCart />
             </Badge>
@@ -197,7 +204,7 @@ const DashboardNavbar = ({ products, user, onMobileNavOpen, onLogOut, ...rest })
             <IconButton color="inherit" component={RouterLink} to="/app/cart-detail">
               <Badge
                 badgeContent={products.map(p => p.quantity).reduce((a,b) => (a+b), 0)}
-                color="secondary"
+                color="cuarto"
               >
                 <ShoppingCart />
               </Badge>
