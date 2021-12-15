@@ -13,7 +13,6 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  TablePagination,
   TableRow,
   Typography
 } from '@material-ui/core';
@@ -24,9 +23,8 @@ import axios from 'axios';
 
 const ABMadmin = ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduct, ...rest }) => {
   const [selectedABMlistIds, setSelectedABMlistIds] = useState([]);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(6);
   const [page, setPage] = useState(0);
-  const [count, setCount] = useState(0);
   const [productos, setProductos] = useState([]);
   const [open, setOpen] = useState(false);
   const [serverMessage, setServerMessage] = useState('');
@@ -68,15 +66,6 @@ const ABMadmin = ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduct, 
 
     setSelectedABMlistIds(newSelectedABMlistIds);
   };
-
-  const handleLimitChange = (event) => {
-    setLimit(event.target.value);
-  };
-
-  const handlePageChange = (event, newPage) => {
-    setPage(newPage);
-  };
-
   function refreshPage(newPage) {
     axios.get('/products/', {
       params: {
@@ -86,7 +75,7 @@ const ABMadmin = ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduct, 
       }})
     .then((res) => {
       setProductos(res.data.data.docs);
-      setCount(res.data.data.total);
+ 
     });
   }
 
@@ -227,7 +216,7 @@ const ABMadmin = ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduct, 
                     {producto.stock}
                   </TableCell>
                   <TableCell>
-                    <IconButton component={RouterLink} to={`/admin/change-product/${producto._id}`} aria-label="edit">
+                    <IconButton component={RouterLink} to={`/publicador/change-product/${producto._id}`} aria-label="edit">
                       <EditIcon />
                     </IconButton>
                   </TableCell>
@@ -237,15 +226,7 @@ const ABMadmin = ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduct, 
           </Table>
         </Box>
       </PerfectScrollbar>
-      <TablePagination
-        component="div"
-        count={count}
-        onPageChange={handlePageChange}
-        onRowsPerPageChange={handleLimitChange}
-        page={page}
-        rowsPerPage={10}
-        rowsPerPageOptions={[10]}
-      />
+
       <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'center'}} open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert variant="filled" onClose={handleClose} severity="success">
           {serverMessage}
