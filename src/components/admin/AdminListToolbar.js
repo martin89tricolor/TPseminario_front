@@ -42,7 +42,7 @@ const AdminListToolbar = ({buscadorText, onBuscadorChange, onBuscar, onDeleteCli
         <Button
           color="primary"
           variant="contained"
-          component={RouterLink} to={'/admin/add-product'}
+          component={RouterLink} to={'/publicador/add-product'}
         >
           Crear Publicación
         </Button>
