@@ -33,7 +33,7 @@ export default function AboutPage () {
       sx={{
       
         minHeight: '100%',
-        py: 1
+        py: 0
       }}
     >
       <main>
@@ -43,7 +43,7 @@ export default function AboutPage () {
       sx={{
       
         minHeight: '100%',
-        py: 3
+        py: 2
       }}
     >
     </Box>
@@ -62,7 +62,7 @@ export default function AboutPage () {
              ¿Quienes somos?
             </Typography>
             <Typography variant="h4" align="center" color="textSecondary" paragraph>
-            Somos una plataforma que realizamos, facilitamos y mejoramos la comunicación entre donadores de alimentos y comedores/ONG/fundaciones que necesiten ayuda.
+            Somos una plataforma que realizamos, facilitamos y mejoramos la comunicación entre donadores de alimentos y comedores/organizaciones sociales que necesiten ayuda, tenemos como área de cobertura el AMBA.
             </Typography>
             <Box
               sx={{
@@ -71,10 +71,10 @@ export default function AboutPage () {
               }}
             >
             <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-            Comedor/ONG/fundacion 
+            Comedor/Organización Social
             </Typography>
             <Typography variant="h4" align="center" color="textSecondary" paragraph>
-            Si formas parte de una organización social que brinda asistencia alimentaria, podes contactarte con nosotros a través del mail:  
+            Si formas parte de un comedor/organización social que brinda asistencia alimentaria, podes contactarte con nosotros a través del mail:  
             </Typography>
             <Typography variant="h4" align="center" color="#2619cf" paragraph>
             contacto@donapp.com.
@@ -130,7 +130,7 @@ export default function AboutPage () {
              Misión
             </Typography>
             <Typography variant="h4" align="center" color="textSecondary" paragraph>
-            Nuestro objetivo es facilitar y mejorar la comunicación entre donadores de alimentos y comedores/ONG/fundaciones, para permitir así, disminuir el desperdicio de alimentos en el país y ayudar a las personas que lamentablemente padecen hambre.
+            Nuestro objetivo es facilitar y mejorar la comunicación entre donadores de alimentos y comedores/Organizaciones sociales, para permitir así, disminuir el desperdicio de alimentos en el país y ayudar a las personas que lamentablemente padecen hambre.
             </Typography>
             <Typography variant="h4" align="center" color="textSecondary" paragraph>
             Le ofrecemos a comerciantes de grandes, medianos y pequeños comercios y/o supermercados la posibilidad de publicar aquellos productos próximos a vencerse que no hayan sido vendidos hasta el momento, para que, a través de la entrega o retiro de los mismos, puedan ayudar a personas que realmente lo necesiten, y puedan obtener también alguna reducción de sus impuestos. 
