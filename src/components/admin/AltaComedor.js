@@ -54,7 +54,7 @@ const AltaComedor = ({...props}) => {
           <Card>
             <CardHeader
               subheader="Ingrese los datos para crear un nuevo usuario"
-              title="Alta de ONG/Fundación"
+              title="Alta de Comedor/Organización Social"
             />
             <Divider />
             <CardContent>
@@ -69,7 +69,7 @@ const AltaComedor = ({...props}) => {
                 >
                   <TextField
                     fullWidth
-                    label="Nombre de ONG/Fundación"
+                    label="Nombre de  Comedor/Organización Social"
                     name="nombre"
                     onChange={formik.handleChange}
                     required
