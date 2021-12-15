@@ -1,122 +1,103 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import {
-  Avatar,
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
+  Alert,
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Container,
   Hidden,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  ListItemSecondaryAction,
+  List,
+  Typography,
 } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-import IconButton from '@material-ui/core/IconButton';
+import CartDetailItem from './CartDetailItem';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { Link as RouterLink } from 'react-router-dom';
 
-function SimpleDialog(props) {
 
-  const { open, onClose } = props;
+const CartDetail = (props) => {
 
-  function handleClose() {
-    onClose();
+  useEffect(() => {
+    if(!props.user.isGuest) {
+      return () => {};
+    }
+    const timer = setTimeout(() => {
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [props.user.isGuest]);
+
+  function handleAddUnit(item) {
+    props.onAddProduct(item.product);
   }
 
-  function handleAddUnit() {
-    props.onAddUnit(props.item);
+  function handleMinusUnit(item) {
+    props.onMinusProduct(item.product);
   }
 
-  function handleMinusUnit() {
-    props.onMinusUnit(props.item);
-  }
-
-  function handleRemoveProduct() {
-    props.onRemoveProduct(props.item);
+  function handleRemoveProduct(item) {
+    props.onRemoveProduct(item.product);
   }
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-      <DialogTitle id="simple-dialog-title">¿Cuántos vas a llevar?</DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          {`${props.product.quantity} ${props.product.quantity === 1 ? 'unidad' : 'unidades'}`}
-          <IconButton aria-label="add" onClick={handleAddUnit}>
-            <AddIcon />
-          </IconButton>
-          <IconButton aria-label="minus" onClick={handleMinusUnit}>
-            <RemoveIcon />
-          </IconButton>
-          <IconButton aria-label="delete" onClick={handleRemoveProduct}>
-            <DeleteIcon />
-          </IconButton>
-        </DialogContentText>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-const CartDetailItem = (props) => {
-
-  const [open, setOpen] = useState(false);
-
-  function handleAddUnit() {
-    props.onAddUnit(props.item);
-  }
-
-  function handleMinusUnit() {
-    props.onMinusUnit(props.item);
-  }
-
-  function handleRemoveProduct() {
-    props.onRemoveProduct(props.item);
-  }
-
-  function handleOpen() {
-    setOpen(true);
-  }
-
-  function handleClose() {
-    setOpen(false);
-  };
-
-  return (
-    <>
-    <ListItem key={props.item.product._id}>
-      <ListItemAvatar onClick={handleOpen}>
-        <Avatar variant="square" src={props.item.product.img} />
-      </ListItemAvatar>
-      <ListItemText
-        primary={props.item.product.nombre}
-        secondary={`${props.item.quantity} ${props.item.quantity === 1 ? "unidad" : "unidades"} `}
-      />
-      <Hidden lgDown>
-        <ListItemSecondaryAction>
-          <IconButton aria-label="add" onClick={handleAddUnit}>
-            <AddIcon />
-          </IconButton>
-          <IconButton aria-label="minus" onClick={handleMinusUnit}>
-            <RemoveIcon />
-          </IconButton>
-          <IconButton aria-label="delete" onClick={handleRemoveProduct}>
-            <DeleteIcon />
-          </IconButton>
-        </ListItemSecondaryAction>
-      </Hidden>
-    </ListItem>
-    <Hidden lgUp>
-      <SimpleDialog
-        product={props.item}
-        open={open}
-        onClose={handleClose}
-        onAddUnit={handleAddUnit}
-        onMinusUnit={handleMinusUnit}
-        onRemoveProduct={handleRemoveProduct}
-      />
-    </Hidden>
-    </>
+    <Box
+      sx={{
+        backgroundColor: 'background.default',
+        minHeight: '100%',
+        py: 3
+      }}
+    >
+      <Container maxWidth="lg">
+        <Card>
+          <CardHeader
+            title="Detalle de reserva"
+            subheader="Acá podés ver todos los productos que elegiste 😁"
+          />
+          {props.products.length === 0 ?
+            // Si no hay productos...
+            <CardContent>
+              <Alert severity="info">Todavía no seleccionaste ningún producto. <RouterLink to="/app/products">¿Qué estás esperando? 😁</RouterLink></Alert>
+            </CardContent> :
+            // Si hay productos...
+            <>
+            <CardContent>
+              <Hidden lgUp>
+                <Typography variant="subtitle2">
+                  Para modificar las cantidades, presioná la imagen del producto que quieras editar.
+                </Typography>
+              </Hidden>
+              <List>
+                {props.products.map(p => (
+                  <CartDetailItem
+                    key={p.product._id}
+                    item={p}
+                    onAddUnit={handleAddUnit}
+                    onMinusUnit={handleMinusUnit}
+                    onRemoveProduct={handleRemoveProduct}
+                  />
+                ))}
+              </List>
+              <Typography variant="h3" align="right">
+                Total de productos: {props.products.map(p => p.quantity).reduce((a,b) => (a+b), 0)}
+              </Typography>
+            </CardContent>
+            <CardActions sx={{justifyContent: 'right'}}>
+              <Button
+                variant="contained"
+                endIcon={<ChevronRightIcon />}
+                component={RouterLink}
+                to='/app/checkout'
+              >
+                Confirmar reserva
+              </Button>
+            </CardActions>
+            </>
+          }
+        </Card>
+      </Container>
+    </Box>
   )
 }
 
-export default CartDetailItem;
+export default CartDetail;
