@@ -62,26 +62,19 @@ const items = [
   },
 
   {
-    href: '/admin/ABM',
+    href: '/publicador/ABM',
     icon: EditIcon,
     title: 'ABM',
     requiresAdmin: true,
     requiresLogin: true,
   },
   {
-    href: '/admin/orders',
+    href: '/publicador/orders',
     icon: ListIcon,
     title: 'Donaciones',
     requiresAdmin: true,
     requiresLogin: true,
   },
-  {
-    href: '/admin/users',
-    icon: ListIcon,
-    title: 'Usuarios',
-    requiresAdmin: true,
-    requiresLogin: true,
-  }
 ];
 
 function visibleFor(link, user) {
