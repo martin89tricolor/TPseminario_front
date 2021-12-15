@@ -13,6 +13,7 @@ import CartDetail from 'src/pages/CartDetail';
 import ProductDetail from 'src/pages/ProductDetail';
 import ABMAlta from 'src/components/admin/ABMalta';
 import AltaComedor from 'src/components/admin/AltaComedor';
+import Formulario from 'src/components/admin/Formulario';
 import Remitos from 'src/components/admin/Remitos';
 import ABMModificar from 'src/components/admin/ABMmodificar';
 import Orders from 'src/pages/Orders';
@@ -39,6 +40,7 @@ const routes = (props) => [
         : <Navigate to="/login" />
       },
       { path: 'home', element: <Home /> },
+      { path: 'form-user', element: <Formulario /> },
       { path: 'products', element: (
         <ProductList onAgregarClick={props.handleAddProduct} />) },
       { path: 'about', element: <About /> },
@@ -55,7 +57,7 @@ const routes = (props) => [
     ]
   },
   {
-    path: 'admin',
+    path: 'publicador',
       element: props.user.isAdmin ?
         <DashboardLayout
           user={props.user}
