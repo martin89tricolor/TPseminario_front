@@ -34,6 +34,9 @@ export default function Footer() {
         <Typography variant="h5" align="center" component="h2" gutterBottom>
           {'Todos los derechos reservados.'}
         </Typography>
+        <Typography variant="h4" align="center" component="h2" gutterBottom>
+            contacto@donapp.com.
+         </Typography>
      </Container>
     </div>
   );
