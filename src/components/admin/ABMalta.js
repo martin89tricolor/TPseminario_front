@@ -67,7 +67,7 @@ const ABMalta = ({...props}) => {
   function handleNewProduct(newProduct) {
     axios.post('/products/', newProduct)
     .then((res) => {
-      navigate('/admin/ABM');
+      navigate('/publicador/ABM');
       alert(res.data.message);
     })
     .catch((err) => {
