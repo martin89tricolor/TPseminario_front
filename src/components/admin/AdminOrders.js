@@ -78,7 +78,7 @@ function OrdersRow (props){
         <Chip label={order.estado} color={order.estado === 'OK' ? 'primary' : 'default'} />
       </TableCell>
       <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-        <Chip label={order.estado2} color={order.estado2 === 'Enviado' ? 'primary' : 'default'} />
+        <Chip label={order.estado2} color={order.estado2 === 'Descargado' ? 'primary' : 'default'} />
       </TableCell>
     </TableRow>
     <TableRow>
@@ -90,7 +90,7 @@ function OrdersRow (props){
               </Typography>
               <Chip
                 icon={<LocationOnIcon/>}
-                label={`${'Av. Madero 1234'}, CP ${'1234'}, ${'Puerto Madero'}, ${'CABA'}.`}
+                label={`${'Bermúdez 2025'}, CP ${'1234'}, ${'Villa Devoto'}, ${'CABA'}.`}
                   />
               <Table size="small" aria-label="purchases">
                 <TableHead>
@@ -179,7 +179,7 @@ const AdminOrders= ({ ...rest }) => {
     });
   }
   function handleRemitos() {
-    axios.post('/orders/update-status2', {ids: selectedOrders, estado2: 'Enviado'})
+    axios.post('/orders/update-status2', {ids: selectedOrders, estado2: 'Descargado'})
     .then((res) => {
       refreshPage(page);
       setSelectedOrders([]);
@@ -217,7 +217,7 @@ const AdminOrders= ({ ...rest }) => {
          sx={{ mx: 1 }}
           variant="contained"
               color="primary"
-              href="  https://mega.nz/file/NM5WDAqB#YblXJnbek4R63ARbEC4pWyXOlchUcjrc-Igta45rUhQ"
+              href="https://mega.nz/file/sIJg1TKZ#4uOZo03QOQ2p5vuy3AJI6Whwd1H315xF_EQhzQ9YYho"
               target="_blank"
           >
             Solicitar remitos
@@ -249,7 +249,7 @@ const AdminOrders= ({ ...rest }) => {
                     ID de Donación
                   </TableCell>
                   <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-                    Nombre ONG/Fundación
+                    Comedor/Organización Social
                   </TableCell>
                   <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                     CUIT
