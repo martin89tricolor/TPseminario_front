@@ -23,11 +23,15 @@ const ProductList = (props) => {
   const [zonas, setZonas] = useState([]);
   const [marcas, setMarcas] = useState([]);
   const [categorias, setCategorias] = useState([]);
-  const [fechas, setFechas] = useState([]);
+  const [ordenamientos] = useState([
+    {label: 'Vencimiento más cercano', value: 1},
+    {label: 'Vencimiento más lejano', value: -1},
+  ]);
   const [zona, setZona] = useState('');
   const [marca, setMarca] = useState('');
   const [categoria, setCategoria] = useState('');
-  const [fecha, setFecha] = useState('');
+  const [ordenamiento, setOrdenamiento] = useState(null);
+
 
   useEffect(() => {
     axios.get('/products/', {params: {
@@ -35,14 +39,14 @@ const ProductList = (props) => {
       zona: zona === '' ? undefined : zona,
       marca: marca === '' ? undefined : marca,
       categoria: categoria === '' ? undefined : categoria,
-      fecha: fecha === '' ? undefined : fecha,
+      ordenamiento: ordenamiento ? ordenamiento.value : undefined,
     }})
     .then((res) => {
       setProducts(res.data.data.docs);
       setPages(res.data.data.pages);
       setWaitingServer(false);
     });
-  }, [page, zona, marca, categoria, fecha]);
+  }, [page, zona, marca, categoria, ordenamiento]);
 
   useEffect(() => {
     axios.get('/products/filters')
@@ -50,7 +54,6 @@ const ProductList = (props) => {
       setZonas(res.data.data.zonas);
       setCategorias(res.data.data.categorias);
       setMarcas(res.data.data.marcas);
-      setFechas(res.data.data.fechas);
     });
   }, []);
 
@@ -77,8 +80,8 @@ const ProductList = (props) => {
     setPage(1);
   }
 
-  function handleFechaChange(e, value) {
-    setFecha(value);
+  function handleSortChange(e, value) {
+    setOrdenamiento(value);
     setPage(1);
   }
 
@@ -153,10 +156,10 @@ const ProductList = (props) => {
               <Autocomplete
                   disablePortal
                   id="combo-box-fechas"
-                  options={fechas}
+                  options={ordenamientos}
                   // sx={{ width: 300 }}
-                  renderInput={(params) => <TextField {...params} label="Fecha de Vencimiento" />}
-                  onChange={handleFechaChange}
+                  renderInput={(params) => <TextField {...params} label="Ordenar por fecha de Vencimiento" />}
+                  onChange={handleSortChange}
                 />
               </Paper>
             </Grid>
