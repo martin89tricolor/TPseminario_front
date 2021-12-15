@@ -127,7 +127,7 @@ function AdminUsers ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduc
               color="primary" 
               component={RouterLink} to={'/admin/add-user'}
              >
-               Dar alta ONG/Fundación
+               Dar alta Comedor/Organización Social
               </Button>
               <Button variant="contained" color="primary" onClick={handleDeleteUsers} sx={{ mx: 1 }}>
                 Eliminar seleccionados
@@ -208,7 +208,7 @@ function AdminUsers ({ ABMlist, onInsertProduct, onUpdateProduct, onDeleteProduc
                           <TableCell>
                             {user.isAdmin ?
                               <Chip label="Publicador/Donador" color="primary" /> :
-                              <Chip label="ONG/Fundación" color="default" />
+                              <Chip label=" Comedor/Organización Social" color="default" />
                             }
                           </TableCell>
                         </TableRow>
