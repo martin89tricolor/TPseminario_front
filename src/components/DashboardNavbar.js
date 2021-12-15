@@ -50,26 +50,20 @@ const items = [
     requiresLogin: false,
   },
   {
-    href: '/admin/ABM',
+    href: '/publicador/ABM',
     icon: EditIcon,
     title: 'Mis Publicaciones',
     requiresAdmin: true,
     requiresLogin: true,
   },
   {
-    href: '/admin/orders',
+    href: '/publicador/orders',
     icon: ListIcon,
     title: 'Mis Donaciones',
     requiresAdmin: true,
     requiresLogin: true,
   },
-  {
-    href: '/admin/users',
-    icon: ListIcon,
-    title: 'Usuarios',
-    requiresAdmin: true,
-    requiresLogin: true,
-  }
+
 ];
 
 function visibleFor(link, user) {
@@ -87,8 +81,11 @@ function visibleFor(link, user) {
 }
 
 const menuItems = [
-  {to: '/app/account', nombre: 'Mi cuenta'},
   {to: '/app/misDonaciones', nombre: 'Mis Donaciones'},
+];
+
+const menuItems2= [
+{to: '/app/account', nombre: 'Mi cuenta'},
 ];
 
 const DashboardNavbar = ({ products, user, onMobileNavOpen, onLogOut, ...rest }) => {
@@ -182,7 +179,11 @@ const DashboardNavbar = ({ products, user, onMobileNavOpen, onLogOut, ...rest })
                       {item.nombre}
                     </MenuItem>
                   ))
-                  : null
+                  : menuItems2.map((item, i) => (
+                    <MenuItem key={`mt-${i}`} component={RouterLink} to={item.to} onClick={handleClose}>
+                      {item.nombre}
+                    </MenuItem>
+                  ))
                 }
                 <MenuItem onClick={handleLogOutClick}>Salir</MenuItem>
               </Menu>
