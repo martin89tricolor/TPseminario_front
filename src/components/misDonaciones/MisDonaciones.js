@@ -171,7 +171,7 @@ const AdminOrders= ({ ...rest }) => {
       <Container maxWidth="lg">
         <Card>
           <CardContent>
-            <Alert severity="info">Todavía no recibistes ninguna donación. <RouterLink to="/app/products">¿Qué estás esperando? 😁</RouterLink></Alert>
+            <Alert severity="info">Todavía no recibistes ninguna donación. <RouterLink to="/app/products"></RouterLink></Alert>
           </CardContent>
         </Card>
       </Container>
@@ -194,10 +194,10 @@ const AdminOrders= ({ ...rest }) => {
                     Donador
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-                  Teléfono de Donador
+                  Teléfono del Donador
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
-                  E-mail de Donador
+                  E-mail del Donador
                   </TableCell>
                   <TableCell  style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
                   </TableCell>
