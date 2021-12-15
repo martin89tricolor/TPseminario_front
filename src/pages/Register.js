@@ -96,14 +96,31 @@ const Register = (props) => {
                     color="textPrimary"
                     variant="h2"
                   >
-                    Crear nueva cuenta
+                    Crear nueva cuenta Comercio/Donador
                   </Typography>
+                  <Box
+                      sx={{
+                      
+                        py: 2
+                      }}
+                    >
+                  <Typography
+                  color="red"
+                  variant="h5"
+                >
+                  Perteneces a una Organización Social/Comedor?
+                  {' '}
+                
+                    Contactanos: contacto@donapp.com.
+                
+                </Typography>
+                </Box>
                   <Typography
                     color="textSecondary"
                     gutterBottom
-                    variant="body2"
+                    variant="h5"
                   >
-                    Ingrese los datos para crear la cuenta
+                    Ingrese los datos para crear la cuenta:
                   </Typography>
                 </Box>
           <Grid
